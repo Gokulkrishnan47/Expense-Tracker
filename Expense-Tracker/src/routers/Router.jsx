@@ -5,9 +5,9 @@ import Homepage from '../component/Homepage/Homepage'
 const Router = () => {
   return (
     <Routes>
-        <Route path='/' element={<Homepage/>}/>
+    <Route path='/' element={<Homepage/>}/>
     </Routes>
   )
 }
 
-export default Router
+export default Router;
