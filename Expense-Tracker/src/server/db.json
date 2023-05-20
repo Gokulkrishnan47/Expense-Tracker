@@ -2,9 +2,14 @@
   "users": [
     {
       "id": 1,
-      "username": "gokul@gmail.com",
-      "password": "123456789"
+      "name": "Aruna",
+      "dob": "2023-02-20",
+      "address": "hghfbhfh",
+      "phone": "963546532746376735",
+      "pan": "73647363",
+      "email": "sfghdhv@gshs",
+      "password": "kwwheudhebd",
+      "pic": "C:\\fakepath\\bg expense.avif"
     }
   ]
-
 }
