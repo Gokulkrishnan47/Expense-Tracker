@@ -1,0 +1,34 @@
+.front-container{
+   /* background:rgb(42, 186, 234); */
+   background:linear-gradient(to right,#3f5efb,#fc466b);
+   height: 100vh;
+}
+.front-img{
+    border-radius: 50%;
+    border: 5px solid rgba(247, 245, 243, 0.685);
+    width: 400px;
+    height: 400px;
+    margin-top: 50px; 
+}
+.center{
+    text-align: center;
+}
+.front-heading{
+    font-size: 30px;
+}
+.front-btn{
+    margin-top: 20px;
+    border-radius: 8px;
+    padding: 14px 30px;
+    text-transform: uppercase;
+    background-color:deeppink;
+    color: #fff;
+    font-size:15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .front-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
