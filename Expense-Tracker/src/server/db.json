@@ -2,8 +2,13 @@
   "users": [
     {
       "id": 1,
-      "username": "gokul@gmail.com",
-      "password": "123456789"
+       "name":"Dhanalakshmi",
+       "dob":"2023-07-05",
+       "address":"2/7A 14th ward kurunji street,obulapuram",
+       "phone":"8428613956",
+       "email":"dhanalakshmi572002@gmail.com",
+       "password":"9003359388",
+       "pic":"C:\\fakepath''bg expense.avif"
     }
   ]
 
