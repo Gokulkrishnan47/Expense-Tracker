@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react'
 import "../Registerpage/Registerpage.css"
-import connect from '../../connect/connect'
+import { Navigate } from 'react-router-dom'
 
 const initial={id:1,name:"",dob:"",address:"",phone:"",pan:"",email:"",password:"",pic:""}
 
@@ -36,23 +36,23 @@ const reducer=(state,action)=>{
             return state;
     }
 }
+const users=JSON.parse(localStorage.getItem("users"))
+
 const Registerpage = () => {
     const[person,dispatch]=useReducer(reducer,initial)
 
-
-    const Submit=async()=>{
-        const data=await connect.post("/users",person)
-        console.log(data)
-        // console.log(person)
-    }
-
     const handleClick=(e)=>{
-        e.preventDefault()
-        Submit()
+        e.preventDefault();
+        localStorage.setItem("register",JSON.stringify(person))
+
     }
 
   return (
-   <div className='ref-container'>
+ <>
+ {users?(
+    <Navigate to={"/home"}/>
+ ):(
+    <div className='ref-container'>
         
     <form className='reg-form' action="" onSubmit={(e)=>handleClick(e)}>
         <h1>Register</h1>
@@ -69,7 +69,7 @@ const Registerpage = () => {
             onChange={(e)=>dispatch({type:"dob",payload:e.target.value})}/>
        <label htmlFor="" className='reg-label'> Dob :</label><br/>
 
-       <input type="number" className='reg-input'
+       <input type="phone" className='reg-input'
             name="phone"
             value={person.phone}
             onChange={(e)=>dispatch({type:"phone",payload:e.target.value})}/>
@@ -110,6 +110,8 @@ const Registerpage = () => {
         <input className='reg-btn' type="submit" value={"submit"}/>
     </form>
    </div>
+ )}
+ </>
   )
 }
 

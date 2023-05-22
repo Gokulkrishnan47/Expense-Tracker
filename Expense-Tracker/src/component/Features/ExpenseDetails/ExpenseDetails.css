@@ -1,0 +1,16 @@
+.parent{
+    background-color: black;
+    display: flex;
+    width: 450px;
+    gap: 10px;
+    justify-content: center;
+}
+.income{
+    background-color: green;
+    width: 200px;
+    height: 200px;
+}
+.expense{
+    background-color: red;
+    width: 200px;
+}

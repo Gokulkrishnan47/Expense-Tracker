@@ -1,25 +1,27 @@
-import React, { useEffect, useState } from 'react'
-import connect from '../../connect/connect'
+import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const Profilepage = () => {
-  const[profile,setProfile]=useState([])
-
-  console.log(profile)
-  useEffect(()=>{
-    const getuser=async()=>{
-      const {data}=await connect.get("/users")
-      setProfile(data)
-    }
-    getuser()
-  },[])
+  
+  const profile=JSON.parse(localStorage.getItem("register"))
+  const users=JSON.parse(localStorage.getItem("users"))
+  
+  const navigator=useNavigate()
+  const logout=()=>{
+    localStorage.removeItem("users")
+    navigator('/')
+  }
   return (
-    <div>
-     <ul>{profile.map((pro)=>
-     <li key={pro.id}>
-      <h1>{pro.name}</h1>
-      <img src={pro.pic} alt="" />
-     </li>)}</ul>
+    <>
+    {users?(
+      <div>
+      <h1>{profile.name}</h1>
+     <button onClick={logout}>Logout</button>
     </div>
+    ):(
+      <Navigate to={"/login"}/>
+    )}
+    </>
   )
 }
 
